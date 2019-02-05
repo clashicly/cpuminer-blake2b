@@ -15,10 +15,10 @@ inline void x13hash(void *output, const void *input)
   
     //uint32_t hash1[16];
 
-    blake2s_state S[1];
-    blake2s_init( S, BLAKE2S_OUTBYTES );
-    blake2s_update( S, input, 80 );
-    blake2s_final( S, hash1, BLAKE2S_OUTBYTES );
+    blake2b_state S[1];
+    blake2b_init( S, BLAKE2S_OUTBYTES );
+    blake2b_update( S, input, 80 );
+    blake2b_final( S, hash1, BLAKE2S_OUTBYTES );
 
     memcpy(output, hash1, 32);
 
